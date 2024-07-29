@@ -3,7 +3,7 @@
  * @author TrapStoner#9526
  * @description Makes low quality avatars in call pop-up high quality.
  * @version 1.2
- * @source https://raw.githubusercontent.com/TrapStoner/BetterDiscordPlugins/master/HQCallerAvatar/HQCallerAvatar.plugin.js
+ * @source https://github.com/TrapStoner/BetterDiscordPlugins/tree/main/HQCallerAvatar
  */
 
 module.exports = meta => {
