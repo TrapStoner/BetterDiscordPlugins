@@ -2,23 +2,23 @@
  * @name CustomCSS Toggle
  * @author TrapStoner#9526
  * @description CTRL + B to toggle CustomCSS
- * @version 1.0
+ * @version 1.1
  * @source https://github.com/TrapStoner/BetterDiscordPlugins/tree/main/CustomCSSToggle
  */
 
 module.exports = meta => {
-	function toggleCSS() {
-		window.BdApi.toggleSetting("settings", "customcss", "customcss");
+	function toggleCSS(key) {
+		if (key.ctrlKey && key.which === 66) {
+			window.BdApi.toggleSetting("settings", "customcss", "customcss");
+		}
 	};
 
 	return {
 		start: () => {
-			document.onkeyup = (key) => {
-		if (key.ctrlKey && key.which === 66) toggleCSS();
-	}
+			document.addEventListener("keyup", toggleCSS, true);
 		},
 		stop: () => {
-			document.onkeyup = null;
+			document.removeEventListener("keyup", toggleCSS, true);
 		}
 	}
 };
